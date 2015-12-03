@@ -31,9 +31,7 @@ class Account extends Controller
 
   public function logout()
   {
-    if(isset($_SESSION["loggedin"]))
-      session_unset($_SESSION["loggedin"]);
-
+    Session::delete("loggedin");
     $this->view();
   }
 
@@ -58,7 +56,7 @@ class Account extends Controller
 
     else
     {
-      $_SESSION["loggedin"] = true;
+      Session::put("loggedin", true);
       if($returnUrl)
         Redirect::to($returnUrl);
       else

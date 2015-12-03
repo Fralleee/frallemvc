@@ -5,11 +5,7 @@ class Controller
   public $authorize = false;
   private function Authenticate()
   {
-    // Götta in authenticationgrejer här
-    if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true)
-      return true;
-    else
-      return false;
+    return Session::get("loggedin");
   }
 
   public function model($model)
