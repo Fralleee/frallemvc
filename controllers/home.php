@@ -27,7 +27,7 @@ class Home extends Controller
 
     //$this->view("home/index", null);
 
-    $this->view();
+    $this->view("home/index");
   }
 
 }

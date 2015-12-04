@@ -6,14 +6,14 @@ class Account extends Controller
   public function index()
   {
     $this->authorize = true;
-    $this->view();
+    $this->view("account/index");
   }
 
   public function register()
   {
     $model = $this->model("RegisterViewModel");
     $data = (array)$model;
-    $this->view($data);
+    $this->view("account/register", $data);
   }
 
   public function login()
@@ -32,7 +32,7 @@ class Account extends Controller
   public function logout()
   {
     Session::delete("loggedin");
-    $this->view();
+    $this->view("account/logout");
   }
 
 
@@ -60,7 +60,7 @@ class Account extends Controller
       if($returnUrl)
         Redirect::to($returnUrl);
       else
-        Redirect::to("/phpmvc/home");
+        Redirect::to("/frallemvc/home");
     }
 
   }
