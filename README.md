@@ -7,4 +7,4 @@ Testing with sublime.git
 
 ## TODO
 - If logged in and visit login page should redirect to Home
-- Autologin after registration
+- Autologin after registration (TEMP FIX)
