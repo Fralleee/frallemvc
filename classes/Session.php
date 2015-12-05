@@ -14,7 +14,9 @@ class Session
 
   public static function get($name)
   {
-    return $_SESSION[$name];
+    if(self::exists($name))
+      return $_SESSION[$name];
+    return false;
   }
 
   public static function delete($name)

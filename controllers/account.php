@@ -6,14 +6,14 @@ class Account extends Controller
   public function index()
   {
     $this->authorize = true;
-    $this->view();
+    $this->view("account/index");
   }
 
   public function register()
   {
     $model = $this->model("RegisterViewModel");
     $data = (array)$model;
-    $this->view($data);
+    $this->view("account/register", $data);
   }
 
   public function login()
@@ -31,10 +31,8 @@ class Account extends Controller
 
   public function logout()
   {
-    if(isset($_SESSION["loggedin"]))
-      session_unset($_SESSION["loggedin"]);
-
-    $this->view();
+    Session::delete("loggedin");
+    $this->view("account/logout");
   }
 
 
@@ -58,11 +56,11 @@ class Account extends Controller
 
     else
     {
-      $_SESSION["loggedin"] = true;
+      Session::put("loggedin", true);
       if($returnUrl)
         Redirect::to($returnUrl);
       else
-        Redirect::to("/phpmvc/home");
+        Redirect::to("/frallemvc/home");
     }
 
   }

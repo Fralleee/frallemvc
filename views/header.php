@@ -8,12 +8,12 @@
 <body>
 <header>  
   <nav>
-    <a href="/phpmvc/home">Home</a>
+    <a href="/frallemvc/home">Home</a>
     <?php if($this->Authenticate()): ?>
-      <a href="/phpmvc/account">Manage</a>
-      <a href="/phpmvc/account/logout">Log out</a>
+      <a href="/frallemvc/account">Manage</a>
+      <a href="/frallemvc/account/logout">Log out</a>
     <?php else: ?>
-      <a href="/phpmvc/account/login">Login</a>
+      <a href="/frallemvc/account/login">Login</a>
     <?php endif; ?>
   </nav>
 </header>

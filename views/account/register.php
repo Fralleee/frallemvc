@@ -22,7 +22,8 @@
         ));
 
         Session::flash("home", "Success! You are now registered.");
-        Redirect::to("/phpmvc/home");
+        Session::put("loggedin", true);
+        Redirect::to("/frallemvc/home");
       }
       catch(Exception $e)
       {
