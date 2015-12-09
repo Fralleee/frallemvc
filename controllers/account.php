@@ -18,6 +18,7 @@ class Account extends Controller
 
   public function login()
   {
+/*
     if(!empty($_POST)){
       $this->PostLogin();
     }
@@ -26,7 +27,10 @@ class Account extends Controller
       $numargs = func_get_args();
       $this->GetLogin($numargs);
     }
-
+*/
+    $model = $this->model("LoginViewModel");
+    $data = (array)$model;
+    $this->view("account/login", $data);
   }
 
   public function logout()

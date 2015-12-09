@@ -1,0 +1,19 @@
+ul > li {
+  list-style: none;
+}
+
+body{
+  background: black;
+}
+
+div{
+  overflow: hidden;
+}
+
+img {
+  margin: 0 auto;
+  max-width:100% !important;
+  height:auto;
+  display:block;
+  box-shadow: 1px 1px 5px #333;
+}

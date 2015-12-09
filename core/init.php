@@ -2,6 +2,8 @@
 
 session_start();
 
+// Definera andra globals/paths
+
 $GLOBALS["config"] = array(
 	
   "mysql" => array(

@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>LayoutTest</title>
+        <link rel="stylesheet" href="content/css/bootstrap.css">
+        <link rel="stylesheet" href="content/css/custom.css">
+        <link rel="author" href="humans.txt">
+        <script src="content/scripts/antimoderate.js"></script>
+    </head>
+    <body>
+        
+      <div class="row">
+
+        <div class="col-md-6">
+
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <img class="" src="http://lorempixel.com/487/550/?=1"/>
+          </div>
+
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <img class="" src="http://lorempixel.com/487/550/?=2"/>
+          </div>
+          
+        </div>
+
+        <div class="col-md-6">
+
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <img class="" src="http://lorempixel.com/487/275/?=3"/>
+          </div>
+
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <img class="" src="http://lorempixel.com/487/275/?=4"/>
+          </div>
+
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <img class="" src="http://lorempixel.com/487/275/?=5"/>
+          </div>
+
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <img class="" src="http://lorempixel.com/487/275/?=6"/>
+          </div>
+
+        </div>
+
+        <div class="col-md-6">
+
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <img class="" src="http://lorempixel.com/487/275/?=3"/>
+          </div>
+
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <img class="" src="http://lorempixel.com/487/275/?=4"/>
+          </div>
+
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <img class="" src="http://lorempixel.com/487/275/?=5"/>
+          </div>
+
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <img class="" src="http://lorempixel.com/487/275/?=6"/>
+          </div>
+
+        </div>
+
+        <div class="col-md-6">
+
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <img class="" src="http://lorempixel.com/487/550/?=1"/>
+          </div>
+
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <img class="" src="http://lorempixel.com/487/550/?=2"/>
+          </div>
+
+        </div>
+
+
+      </div>
+
+      <script>
+          var images = document.querySelectorAll('img');
+          [].forEach.call(images, function(img) {
+            AntiModerate.process(img, img.getAttribute("data-antimoderate-idata"));
+          });          
+      </script>
+    </body>
+</html>
