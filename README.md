@@ -1,4 +1,4 @@
-# frallemvc
+# Frallemvc
 MVC project coded in PHP
 
 This stuff is going to be awesome!
@@ -20,5 +20,5 @@ Testing with sublime.git
 
 
 ## Patch notes
-#2015-12-09
+###2015-12-09
 - Added Picture-class
