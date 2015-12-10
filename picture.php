@@ -2,8 +2,7 @@
   require_once "core/init.php";
   if(!empty($_POST))
   {
-    $picture = new Picture();
-    $picture->UploadImage($_FILES["photo"]);
+    Picture::UploadImage($_FILES["photo"]);
   }
 
   $images = DB::getInstance()->query("select * from pictures")->all();

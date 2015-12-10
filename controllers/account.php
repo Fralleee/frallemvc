@@ -28,6 +28,7 @@ class Account extends Controller
       $this->GetLogin($numargs);
     }
 */
+    var_dump($numargs);
     $model = $this->model("LoginViewModel");
     $data = (array)$model;
     $this->view("account/login", $data);
@@ -48,6 +49,8 @@ class Account extends Controller
     $returnUrl =  UrlHelpers::ValidateInput($_POST["returnUrl"]);
     $error = $this->ValidateLogin($email, $password);
     
+    var_dump($error);
+
     if(count($error) > 0)
     {
       $this->view("account/login", [

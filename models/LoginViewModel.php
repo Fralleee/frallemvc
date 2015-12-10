@@ -2,7 +2,7 @@
 
 class LoginViewModel
 {
-  public $returnUrl = "";
+  public $returnUrl;
   public $validationdata = array(
       "email" => array(
         "displayname" => "Email",

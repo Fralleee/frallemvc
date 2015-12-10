@@ -5,7 +5,7 @@
   $welcome = "";
   if($data)
   {
-    if(array_key_exists("email", $data)){      
+    if(array_key_exists("returnUrl", $data)){      
       $returnUrl = $data["returnUrl"];
     }
     if(array_key_exists("email", $data)){
@@ -15,6 +15,7 @@
       $welcome = $data["welcome"];
     }
   }
+  var_dump($data);
 ?>
 
 <h1 class="welcome"><?php echo $welcome; ?> </h1>
@@ -22,22 +23,24 @@
 
 <?php 
   
-if(!empty($data["error"]))
-{
-  $error = $data["error"];
-  echo "<h2 class='error'>$error</h2>";
-}
+  if(!empty($data["error"]))
+  {
+    $error = $data["error"];
+    echo "<h2 class='error'>$error</h2>";
+  }
 
-if(Input::exists())
-{
-  if(Token::check(Input::get("token")))
+  if(Input::exists() && Token::check(Input::get("token")))
   {
     $validate = new Validate();
     $validation = $validate->check($_POST, $data["validationdata"]);
 
     if($validation->passed())
-    {
-      // Log user in
+    {      
+      Session::put("loggedin", true);
+      if($returnUrl)
+        Redirect::to($returnUrl);
+      else
+        Redirect::to("/frallemvc/home");
     }
     else{
       foreach($validation->errors() as $error)
@@ -46,9 +49,8 @@ if(Input::exists())
       }
     }
   }
-}
-
 ?>
+
 <div class="form">
 
   <form method="post">
