@@ -14,8 +14,14 @@ MVC & CMS project coded in PHP
 - Add cropping to images when uploaded to match specific image dimensions (ex. product image = 420 x 200)
 - Remove shop-specific code and branch it into its own repository
 - Alter resize-funtion to be smaller
+- Add authorize role to authorize-function
+- Fix returnUrl
 
 ## Patch notes
+###2015-12-10
+- Added thumbnail to picture
+- Remade UploadImage to static function
+
 ###2015-12-09
 - Added Picture-class
 - Updated readme with Todo
