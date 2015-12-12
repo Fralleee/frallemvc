@@ -53,8 +53,10 @@
     # Loading image to memory according to type
     switch ( $info[2] ) {
       case IMAGETYPE_JPEG:  $file !== null ? $image = imagecreatefromjpeg($file) : $image = imagecreatefromstring($string);  break;
-      case IMAGETYPE_GIF:   $file !== null ? $image = imagecreatefromgif($file)  : $image = imagecreatefromstring($string);  break;
-      case IMAGETYPE_PNG:   $file !== null ? $image = imagecreatefrompng($file)  : $image = imagecreatefromstring($string);  break;
+      case IMAGETYPE_GIF:  $file !== null ? $image = imagecreatefromjpeg($file) : $image = imagecreatefromstring($string);  break;
+      case IMAGETYPE_PNG:  $file !== null ? $image = imagecreatefromjpeg($file) : $image = imagecreatefromstring($string);  break;
+      //case IMAGETYPE_GIF:   $file !== null ? $image = imagecreatefromgif($file)  : $image = imagecreatefromstring($string);  break;
+      //case IMAGETYPE_PNG:   $file !== null ? $image = imagecreatefrompng($file)  : $image = imagecreatefromstring($string);  break;
       default: return false;
     }
     
@@ -104,12 +106,14 @@
     
     # Writing image according to type to the output destination and image quality
     switch ( $info[2] ) {
-      case IMAGETYPE_GIF:   imagegif($image_resized, $output);    break;
       case IMAGETYPE_JPEG:  imagejpeg($image_resized, $output, $quality);   break;
-      case IMAGETYPE_PNG:
-        $quality = 9 - (int)((0.9*$quality)/10.0);
-        imagepng($image_resized, $output, $quality);
-        break;
+      case IMAGETYPE_GIF:  imagejpeg($image_resized, $output, $quality);   break;
+      case IMAGETYPE_PNG:  imagejpeg($image_resized, $output, $quality);   break;
+      // case IMAGETYPE_GIF:   imagegif($image_resized, $output);    break;
+      // case IMAGETYPE_PNG:
+      //   $quality = 9 - (int)((0.9*$quality)/10.0);
+      //   imagepng($image_resized, $output, $quality);
+      //   break;
       default: return false;
     }
     return true;

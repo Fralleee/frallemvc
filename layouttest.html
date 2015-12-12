@@ -5,47 +5,13 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>LayoutTest</title>
-        <link rel="stylesheet" href="content/css/grid.css">
-        <link rel="author" href="humans.txt">
-        <script src="content/scripts/antimoderate.js"></script>
+        <script src="content/scripts/test.js"></script>
     </head>
     <body>
-      <div class="grid-wrapper">
 
-            <div class="grid-container">
-              <div class="grid-item"><img src="http://lorempixel.com/400/200/?=85"/></div>
-            </div>
-
-            <div class="grid-container">
-              <div class="grid-item"><img src="http://lorempixel.com/400/200/?=a85"/></div>
-              <div class="grid-item"><img src="http://lorempixel.com/400/200/?=8a5"/></div>
-            </div>
-            <div class="grid-container">
-              <div class="grid-item"><img src="http://lorempixel.com/400/200/?=4"/></div>
-              <div class="grid-item grid-item-large"><img src="http://lorempixel.com/400/200/?=6"/></div>
-              <div class="grid-item"><img src="http://lorempixel.com/400/200/?=3"/></div>
-            </div>
-
-          <div class="grid-container">
-            <div class="grid-item"><img src="http://lorempixel.com/400/200/?=2"/></div>
-            <div class="grid-item"><img src="http://lorempixel.com/400/200/?=1"/></div>
-            <div class="grid-item"><img src="http://lorempixel.com/400/200/?=345353"/></div>
-            <div class="grid-item"><img src="http://lorempixel.com/400/200/?=89089+0"/></div>
-          </div>
-
-          <div class="grid-container">
-            <div class="grid-item"><img src="http://lorempixel.com/400/200/?=64567"/></div>
-            <div class="grid-item"><img src="http://lorempixel.com/400/200/?=asdasfg"/></div>
-            <div class="grid-item"><img src="http://lorempixel.com/400/200/?=asdasfg"/></div>
-          </div>
-
-      </div>
-
-      <script>
-          var images = document.querySelectorAll('img');
-          [].forEach.call(images, function(img) {
-            AntiModerate.process(img, img.getAttribute("data-antimoderate-idata"));
-          });          
+      <script>  
+        var array = ["RolleIsTheBoss", "Bajs"];
+        console.log(array.RolleIsTheBoss());    
       </script>
     </body>
 </html>
