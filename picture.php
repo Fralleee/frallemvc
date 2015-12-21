@@ -6,7 +6,6 @@
   }
 
   $images = DB::getInstance()->query("select * from pictures")->all();
-
 ?>
 
 <!doctype html>
